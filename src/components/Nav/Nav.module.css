@@ -1,0 +1,63 @@
+.logo {
+  height: 30px;
+ 
+ 
+}
+
+.nav_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    font-size: 90%;
+}
+
+
+
+.nav {
+  width: 70%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0.5rem calc((100vw-1000px) / 2); */
+  align-items: center;
+
+
+}
+
+.navlink {
+  text-decoration: none;
+  font-weight: 600;
+  color: gray;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+ 
+
+.navMenu {
+  display: flex;
+  align-items: center;
+}
+
+.nav_login_button {
+    background-color: #EFF7FF;
+    color: #5A95C6;
+    border: none;
+    padding: 15px 35px;
+    cursor: pointer;
+    text-shadow: 1px 0 #888888;
+    letter-spacing:1px;
+    font-weight:bold;
+    font-size: 90%;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0 0;
+  padding: 0;
+}
+
+ 

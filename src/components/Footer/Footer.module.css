@@ -1,0 +1,20 @@
+.footer_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_container > div:first-of-type{
+        width: 80%;
+        text-align: right;
+}
+
+.footer_container  p{
+    padding: 10px 0px;
+    color: #E1E1E3;
+}
+
+.underline{
+    text-decoration: underline;
+}
+

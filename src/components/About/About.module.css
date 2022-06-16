@@ -1,0 +1,42 @@
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#8E8E8E;
+}
+.inner_container{
+    width: 70%;
+
+}
+
+.inner_container > h2{
+    font-weight: 400;
+
+}
+
+.inner_container > p:first-of-type{
+    font-weight: 900;
+    margin-bottom: 0px;
+}
+
+.inner_container > p:nth-of-type(2){
+    margin-top: 5px;
+}
+
+.inner_container p,h2 {
+    text-align: left;
+}
+
+.inner_container p {
+    font-size: 95%;
+}
+
+.inner_container img{
+    max-width: 600px;
+    min-width: 300px;
+}
+
+a{
+    color: #76A4CE;
+}
