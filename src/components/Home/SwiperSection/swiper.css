@@ -1,0 +1,37 @@
+
+.swiper-button-prev {
+
+    background-image: url("./Icon_Arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 35% auto;
+    background-position: center;
+    
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0px 10px;
+     position: absolute;
+     left: 0px;
+   
+  }
+
+  .swiper-button-prev::after {
+    display: none;
+  }
+
+
+.swiper-button-next {
+    transform: rotate(180deg);
+    background-image: url("./Icon_Arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 35% auto;
+    background-position: center;
+    
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0px 10px;
+     position: absolute;
+     right: 10px;
+   
+  }
+
+  .swiper-button-next::after {
+    display: none;
+  }

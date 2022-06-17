@@ -1,0 +1,234 @@
+.contact_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.contact_inner_container {
+  width: 70%;
+  /* background-color: rgb(242, 242, 242); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact_img_container {
+
+}
+.contact_img_container > div:nth-of-type(1) {
+  overflow: hidden;
+}
+
+.contact_img_container img {
+    margin-top: -50px;
+    margin-bottom: -50px;
+    height: 105vh;
+  }
+
+
+.contact_left_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+
+.contact_left_container > div {
+  width: 100%;
+}
+.contact_left_container  h2{
+   
+    font-weight: 900;
+    color: #979696;
+   }
+.contact_left_container  p{
+   line-height: 25px;
+   font-weight: 600;
+   color: #A1A1A1;
+  }
+
+
+
+.form_out_container {
+  width: 100%;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.form_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+}
+
+.form_container {
+  width: 100%;
+}
+
+.form_group {
+  float: left;
+  text-align: left;
+  width: 100%;
+}
+
+.form_container > *:nth-child(1),
+.form_container > *:nth-child(2) {
+  width: 48%;
+}
+@media (max-width: 1000px) {
+  .form_container > *:nth-child(1),
+  .form_container > *:nth-child(2) {
+    width: 100%;
+  }
+}
+
+.form_name_and_email {
+}
+
+.form_group label {
+}
+
+.form_group input,
+label,
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.form_group input,
+label,
+textarea:focus {
+  outline: none;
+}
+
+.form_group input,
+textarea {
+  width: 100%;
+  padding: 9px 10px;
+  line-height: 140%;
+  font-size: 14pt;
+  background-color: #f8f9fc;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 5px;
+}
+
+.form_name_and_email input,
+label {
+}
+
+.form_add_phone_button {
+  width: 100%;
+  padding: 12px 0px;
+  margin: 10px 0px;
+  background-color: #eef7ff;
+  color: #4284be;
+  font-weight: 900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form_submit_button {
+  width: 100%;
+  padding: 12px 0px;
+  margin: 10px 0px;
+  background-color: #307ab9;
+  color: #ffffff;
+  font-weight: 900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.form_submit_button svg {
+  height: 15px;
+  position: absolute;
+  /* left: 20px; */
+  left: 2%;
+}
+
+.form_group_checkbox {
+  display: inline-flex;
+}
+
+.form_group_checkbox > * {
+  cursor: pointer;
+}
+
+.form_address_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form_address_container > *:nth-child(1),
+.form_address_container > *:nth-child(2) {
+  width: 48%;
+}
+
+.form_address_container > *:nth-child(3),
+.form_address_container > *:nth-child(4),
+.form_address_container > *:nth-child(5),
+.form_address_container > *:nth-child(6) {
+  width: 22%;
+}
+
+@media (max-width: 1100px) {
+  .form_address_container > *:nth-child(1),
+  .form_address_container > *:nth-child(2),
+  .form_address_container > *:nth-child(3),
+  .form_address_container > *:nth-child(4),
+  .form_address_container > *:nth-child(5),
+  .form_address_container > *:nth-child(6) {
+    width: 100%;
+  }
+}
+
+.form_success_container {
+  width: 100%;
+  background-color: #e9f4da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 0px;
+}
+
+.form_success_container svg {
+  height: 60px;
+  padding: 15px;
+  border: 1px solid #8dc73d;
+  background-color: #8dc73d;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .contact_inner_container > div:nth-child(2) {
+    display: none;
+  }
+}
+
+.error_container {
+
+    background-color: pink;
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+.error_container p{
+    color:red !important;
+    padding: 10px;
+}

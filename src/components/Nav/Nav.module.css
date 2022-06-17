@@ -49,7 +49,14 @@
     letter-spacing:1px;
     font-weight:bold;
     font-size: 90%;
+ 
 }
+
+
+.nav_login_button:hover {
+  box-shadow: 0 0 11px rgba(160, 160, 160, 0.2); 
+}
+
 
 hr {
   display: block;

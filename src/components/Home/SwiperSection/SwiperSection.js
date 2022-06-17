@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import classes from "../Home.module.css";
+import './swiper.css'
 
 export default function SwiperSection() {
   const [bannerData, setBannerData] = useState([]);
@@ -39,7 +40,7 @@ export default function SwiperSection() {
               <div className={classes.swiper_text_group}>
                 <h1>{data.Title}</h1>
                 <p className={classes.swiper_text_group_subtitle} >{data.Subtitle}</p>
-                <button>Contact us</button>
+                <button className={classes.swiper_text_group_button}>Contact us</button>
               </div>
 
               <div className={classes.grad}>

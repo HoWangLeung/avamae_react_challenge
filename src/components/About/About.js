@@ -7,7 +7,9 @@ export default function About() {
       <div className={classes.inner_container}>
         <h2>About us</h2>
         <p>
-        Populo facllisi nam no,dolor deleniti deseruisse ne cum,nam quodsi alliquam eligendi ne.Ferri euismod accusata te nec, summo accumsan at vix.
+          Populo facllisi nam no,dolor deleniti deseruisse ne cum,nam quodsi
+          alliquam eligendi ne.Ferri euismod accusata te nec, summo accumsan at
+          vix.
         </p>
         <p>
           Praesent lacinia feugiat posuere. Maecenas nibh nibh, rutrum volutpat
@@ -49,13 +51,15 @@ export default function About() {
           scelerisque mi, sed pellentesque lacus nulla sed tellus. Donec in
           fringilla elit.
         </p>
-        <p>Taria duo ut vis semper abhorreant:</p>
-        <ul>
-          <li> Phasellus tincidunt dolor in dolor mattis</li>
-          <li> Phasellus tincidunt dolor in dolor mattis</li>
-          <li> Phasellus tincidunt dolor in dolor mattis</li>
-          <li> Phasellus tincidunt dolor in dolor mattis</li>
-        </ul>
+        <div className={classes.ul_container}  >
+          <p>Taria duo ut vis semper abhorreant:</p>
+          <ul>
+            <li> Phasellus tincidunt dolor in dolor mattis</li>
+            <li> Phasellus tincidunt dolor in dolor mattis</li>
+            <li> Phasellus tincidunt dolor in dolor mattis</li>
+            <li> Phasellus tincidunt dolor in dolor mattis</li>
+          </ul>
+        </div>
 
         <p>
           In in justo in ante eleifend vulputate. Nunc iaculis, nibh at laoreet
