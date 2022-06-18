@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import classes from "../Home.module.css";
 import "./swiper.css";
 
-export default function SwiperSection({ bannerData }) {
+export default function SwiperSection({ bannerData,onLoad }) {
   return (
     <Swiper
       loop={true}
@@ -39,6 +39,8 @@ export default function SwiperSection({ bannerData }) {
               <div className={classes.grad}></div>
 
               <img
+              
+              onLoad={onLoad}
                 className={classes[`swiper_img_${index}`]}
                 src={data.ImageUrl}
                 alt="img"

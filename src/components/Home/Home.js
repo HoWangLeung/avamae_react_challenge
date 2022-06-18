@@ -20,6 +20,7 @@ export default function Home(props) {
   
   const [bannerData, setBannerData] = useState([]);
   const [error,setError] = useState()
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     axios
@@ -36,18 +37,24 @@ export default function Home(props) {
     return () => {};
   }, []);
 
+  function onLoad() {
+    console.log('loaded');
+    setLoaded(true);
+  }
+
   console.log(props);
   return (
     <>
-      {bannerData.length>0 && (
-        <motion.div  {...AnimationSettings} key="1">
-          <SwiperSection bannerData={bannerData} />
+      { (bannerData.length==0||!loaded)  && <div className="lds-dual-ring"></div>}
+
+        {  <motion.div  {...AnimationSettings} key="1"  style={{display: loaded ?  "block":"none"}}  >
+          <SwiperSection bannerData={bannerData} onLoad={onLoad} loaded={loaded} />
           <SectionTwo />
           <SectionThree />
           <SectionFour />
-        </motion.div>
-      )}
-      {bannerData.length==0 && ! error && <div className="lds-dual-ring"></div>}
+        </motion.div>}
+     
+     
 
       {error && <div>System error, please come back later</div>}
     </>
