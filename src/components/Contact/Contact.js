@@ -4,7 +4,7 @@ import classes from "./Contact.module.css";
 import ErrorMessage from "./ErrorHandling/ErrorMessage";
 import { ReactComponent as IconSubmit } from "./Icon_Submit.svg";
 import { ReactComponent as IconValid } from "./Icon_Valid.svg";
-import {AnimationSettings} from '../Common/AnimationSettings'
+import { AnimationSettings } from "../Common/AnimationSettings";
 import { motion } from "framer-motion";
 
 export default function Contact() {
@@ -25,7 +25,7 @@ export default function Contact() {
   });
 
   const [success, setSuccess] = useState(false);
-  const [errors,setErrors]=useState([])
+  const [errors, setErrors] = useState([]);
 
   const handleChange = (e, index) => {
     e.preventDefault();
@@ -88,18 +88,29 @@ export default function Contact() {
         }
       })
       .catch((err) => {
-        console.log(err.response)
-        setErrors(err.response.data.Errors)
+        if (!err.response.data) {
+          //e.g 404
+          setErrors([
+            { FieldName: "SYSTEM_ERROR", MessageCode: "SYSTEM_ERROR" },
+          ]);
+          return;
+        }
+
+        setErrors(err.response.data.Errors);
       });
   };
 
   console.log(errors);
 
   return (
-    <motion.div  {...AnimationSettings} key="2" className={classes.contact_container}>
+    <motion.div
+      {...AnimationSettings}
+      key="2"
+      className={classes.contact_container}
+    >
       <div className={classes.contact_inner_container}>
         <div className={classes.contact_left_container}>
-          <div  >
+          <div>
             <h2>Contact us</h2>
             <p>
               Populo facillsi nam no, dolor deleniti deserulsse ne cum, nam
@@ -122,7 +133,6 @@ export default function Contact() {
                       className="form-control"
                       value={values.FullName}
                     />
-              
                   </div>
 
                   <div className={classes.form_group}>
@@ -135,14 +145,13 @@ export default function Contact() {
                       onChange={handleChange}
                       value={values.EmailAddress}
                     />
-                   
                   </div>
 
                   {values.PhoneNumbers.map((phone, index) => (
                     <div key={index} className={`${classes.form_group}`}>
                       <label htmlFor="phoneNumber1">
                         <span>{`Phone number 0${index + 1}`}</span>
-                        <span> - optional</span>
+                        <span className={classes.optional}  > - optional</span>
                       </label>
                       <input
                         name="PhoneNumbers"
@@ -162,7 +171,11 @@ export default function Contact() {
                   </button>
 
                   <div className={classes.form_group}>
-                    <label htmlFor="message">Message</label>
+                    <div className={classes.form_group_message_text_wrapper} >
+                      <label htmlFor="message">Message</label>
+                      <span>Maximum text length is 500 characters</span>
+                    </div>
+
                     <textarea
                       name="Message"
                       onChange={handleChange}
@@ -185,8 +198,14 @@ export default function Contact() {
                       type="checkbox"
                       name="bIncludeAddressDetails"
                       checked={values.bIncludeAddressDetails}
+                      onChange={() =>
+                        setValues((state) => ({
+                          ...state,
+                          bIncludeAddressDetails: !state.bIncludeAddressDetails,
+                        }))
+                      }
                     />
-                    <label for="vehicle1"> Add address details</label>
+                    <label htmlFor="vehicle1"> Add address details</label>
                   </div>
 
                   {values.bIncludeAddressDetails && (
@@ -274,7 +293,7 @@ export default function Contact() {
               </div>
             )}
 
-            {errors.length>0 && <ErrorMessage errors={errors}/>}
+            {errors.length > 0 && <ErrorMessage errors={errors} />}
 
             {success && (
               <div className={classes.form_success_container}>

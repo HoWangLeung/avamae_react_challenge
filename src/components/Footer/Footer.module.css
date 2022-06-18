@@ -1,20 +1,28 @@
-.footer_container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.footer_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 85%;
 }
 
-.footer_container > div:first-of-type{
-        width: 80%;
-        text-align: right;
+.footer_container > div:first-of-type {
+  width: 80%;
+  text-align: right;
 }
 
-.footer_container  p{
-    padding: 10px 0px;
-    color: #E1E1E3;
+.footer_container p {
+  padding: 10px 0px;
+  color: #e1e1e3;
 }
 
-.underline{
-    text-decoration: underline;
+.underline {
+  text-decoration: underline;
 }
 
+@media (max-width: 700px) {
+    .footer_container > div:first-of-type {
+     
+        text-align:center;
+      }
+      
+}

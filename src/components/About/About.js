@@ -37,7 +37,9 @@ export default function About() {
           turpis egestas. Donec a interdum libero.
         </p>
 
-        <img src="/images/shutterstock_696636415.jpg" alt="" />
+        <div className={classes.about_img_container} >
+          <img src="/images/shutterstock_696636415.jpg" alt="" />
+        </div>
 
         <p>
           Suspendisse mi est, imperdiet et aliquam id, egestas et erat.

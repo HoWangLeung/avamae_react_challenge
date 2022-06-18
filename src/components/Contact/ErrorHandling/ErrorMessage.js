@@ -10,7 +10,8 @@ export default function ErrorMessage({ errors }) {
     "AddressDetails.CityTown":"City/Town",
     "AddressDetails.StateCountyn":"State/County",
     "AddressDetails.Country":"Country",
-    "AddressDetails.Postcode":"PostCode"
+    "AddressDetails.Postcode":"PostCode",
+    "SYSTEM_ERROR":"System Error"
   };
 
   let errorMessageMap = {
@@ -18,7 +19,8 @@ export default function ErrorMessage({ errors }) {
     Invalid_Email_Address: "Email address is invalid",
     Invalid_Phone_Number: "Phone number is invalid. Cannot exceed 20 characters. If provided, a phone number value cannot be null or empty",
     Max_Length_Exceeded: "The message provided exceeds the maximum length allowed",
-    Invalid_Postcode:"Not a valid UK postcode"
+    Invalid_Postcode:"Not a valid UK postcode",
+    SYSTEM_ERROR:"Please try again later"
 
  
   };

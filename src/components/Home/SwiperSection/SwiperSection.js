@@ -1,12 +1,20 @@
 import axios from "axios";
+import "./swiper.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import classes from "../Home.module.css";
+
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import classes from "../Home.module.css";
-import "./swiper.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
-export default function SwiperSection({ bannerData,onLoad }) {
+
+
+export default function SwiperSection({ bannerData }) {
   return (
     <Swiper
       loop={true}
@@ -40,7 +48,7 @@ export default function SwiperSection({ bannerData,onLoad }) {
 
               <img
               
-              onLoad={onLoad}
+          
                 className={classes[`swiper_img_${index}`]}
                 src={data.ImageUrl}
                 alt="img"

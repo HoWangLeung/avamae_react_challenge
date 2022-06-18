@@ -3,14 +3,14 @@
 
     background-image: url("./Icon_Arrow.svg");
     background-repeat: no-repeat;
-    background-size: 35% auto;
+    background-size: 45% auto;
     background-position: center;
     
     background-color: rgba(255, 255, 255, 0.3);
-    padding: 0px 10px;
+    padding: 0px 20px;
      position: absolute;
      left: 0px;
-   
+     margin-left: 1px;
   }
 
   .swiper-button-prev::after {
@@ -22,16 +22,24 @@
     transform: rotate(180deg);
     background-image: url("./Icon_Arrow.svg");
     background-repeat: no-repeat;
-    background-size: 35% auto;
+    background-size: 45% auto;
     background-position: center;
     
     background-color: rgba(255, 255, 255, 0.3);
-    padding: 0px 10px;
+    padding: 0px 20px;
+    margin-right: 1px;
      position: absolute;
-     right: 10px;
+     right: 8px;
    
   }
 
   .swiper-button-next::after {
     display: none;
+  }
+
+  @media (max-width: 700px) {
+    .swiper-button-prev,.swiper-button-next{
+      display: none;
+    }
+   
   }
