@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "../Home.module.css";
 
 export default function SectionFour() {
@@ -80,7 +81,8 @@ export default function SectionFour() {
         </div>
       </div>
 
-      <button className={classes.section4_contact_button}   >Contact us</button>
+     <Link to="contact-us">
+     <button className={classes.section4_contact_button}   >Contact us</button></Link>
      </div>
 
     </div>

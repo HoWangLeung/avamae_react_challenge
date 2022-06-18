@@ -6,22 +6,18 @@ import {
   BrowserRouter,
   Routes, // instead of "Switch"
   Route,
+  useLocation,
 } from "react-router-dom";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import AnimatedRoute from "./AnimatedRoute";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Nav />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/about-us" element={<About />} />
-          <Route exact path="/contact-us" element={<Contact />} />
-        </Routes>
-        <Footer />
+        <AnimatedRoute />
       </BrowserRouter>
     </div>
   );

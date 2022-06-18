@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import classes from "../Home.module.css";
 
 export default function SectionTwo() {
@@ -15,7 +16,7 @@ export default function SectionTwo() {
             <li><span>Donec aliquet urna id nisi congue auctor</span></li>
             <li><span>Donec aliquet urna id nisi congue auctor</span></li>
         </ul>
-        <button  className={classes.learn_more_button} >Learn more</button>
+        <Link to="/about-us">  <button  className={classes.learn_more_button} >Learn more</button></Link>
        </div>
 
 

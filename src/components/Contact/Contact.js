@@ -4,6 +4,8 @@ import classes from "./Contact.module.css";
 import ErrorMessage from "./ErrorHandling/ErrorMessage";
 import { ReactComponent as IconSubmit } from "./Icon_Submit.svg";
 import { ReactComponent as IconValid } from "./Icon_Valid.svg";
+import {AnimationSettings} from '../Common/AnimationSettings'
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [values, setValues] = useState({
@@ -94,7 +96,7 @@ export default function Contact() {
   console.log(errors);
 
   return (
-    <div className={classes.contact_container}>
+    <motion.div  {...AnimationSettings} key="2" className={classes.contact_container}>
       <div className={classes.contact_inner_container}>
         <div className={classes.contact_left_container}>
           <div  >
@@ -292,6 +294,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

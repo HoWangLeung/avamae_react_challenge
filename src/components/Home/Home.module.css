@@ -148,6 +148,10 @@
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
   }
 
+/************************************************
+/*Section 3 *
+*************************************************/
+
 .section3_container {
   height: 500px;
   position: relative;
@@ -156,12 +160,13 @@
 
 .section3_text_container {
   position: absolute;
-  width: 500px;
-  left: 10%;
-  top: 10%;
-  background: rgba(99, 92, 88);
+  max-width: 500px;
+  left: 0%;
+  top: 20%;
+  background: rgba(99, 92, 88,.8);
   color: #ffffff;
-  padding: 40px 30px;
+  padding: 20px 30px;
+  margin: 0% 10%;
 }
 
 .section3_login_button {
@@ -186,12 +191,23 @@
   object-fit: cover;
   object-position: 50% 10%;
 }
+
+
+@media (max-width: 700px) {
+  .section3_text_container {
+
+    top: 15%;
+
+  }
+  
+}
+
 /************************************************
 /*Section 4 *
 *************************************************/
 
 .section4_container {
-  height: 600px;
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,5 +260,7 @@
 .section4_subtitle {
   font-weight: 900;
 }
+
+
 
 

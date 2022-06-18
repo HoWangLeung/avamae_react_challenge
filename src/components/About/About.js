@@ -1,9 +1,11 @@
 import React from "react";
 import classes from "./About.module.css";
+import {AnimationSettings} from '../Common/AnimationSettings'
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className={classes.container}>
+    <motion.div  {...AnimationSettings} key="3" className={classes.container}>
       <div className={classes.inner_container}>
         <h2>About us</h2>
         <p>
@@ -82,6 +84,6 @@ export default function About() {
           massa in, feugiat pharetra nunc.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }

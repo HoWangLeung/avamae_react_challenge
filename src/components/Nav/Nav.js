@@ -7,8 +7,9 @@ export default function Nav() {
    <div>
       <div className={classes.nav_container}>
       <nav className={classes.nav}>
+      <Link  to="/">
         <img className={classes.logo} src="/images/Logo.svg" alt="logo" />
-
+        </Link>
         <div className={classes.navMenu}>
 
           <Link className={classes.navlink} to="/">
@@ -23,7 +24,7 @@ export default function Nav() {
             CONTACT &nbsp; US
           </Link>
 
-          <Link className={classes.navlink} to="/contact-us">
+          <Link className={classes.navlink} to="/">
             <button className={classes.nav_login_button}>Log in</button>
           </Link>
           
