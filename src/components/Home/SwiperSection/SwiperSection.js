@@ -7,31 +7,36 @@ import classes from "../Home.module.css";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
 
 
 
 export default function SwiperSection({ bannerData }) {
+  const [my_swiper, set_my_swiper] = useState({});
+
   return (
     <Swiper
+    onInit={(ev) => {
+      set_my_swiper(ev)
+  }}
       loop={true}
       className={classes.swiper_container}
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
-      navigation
+    
       pagination={{ clickable: true }}
       // scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >
+       <div class="swiper-button-prev" onClick={()=>my_swiper.slidePrev()} ></div>
+       <div class="swiper-button-next" onClick={()=>my_swiper.slideNext()}></div>
       {bannerData.length > 0 &&
         bannerData.map((data, index) => {
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index}  >
               <div className={classes.swiper_text_group}>
                 <h1>{data.Title}</h1>
                 <p className={classes.swiper_text_group_subtitle}>

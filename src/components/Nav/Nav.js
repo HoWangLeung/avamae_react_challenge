@@ -10,9 +10,9 @@ export default function Nav() {
       <Link  to="/">
         <img className={classes.logo} src="/images/Logo.svg" alt="logo" />
         </Link>
-        <div className={classes.navMenu}>
+        <div className={classes.navMenu} ata-test="nav-menu">
 
-          <Link className={classes.navlink} to="/">
+          <Link data-test="nav-home-link" className={classes.navlink} to="/">
             HOME
           </Link>
 
