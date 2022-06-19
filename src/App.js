@@ -3,7 +3,7 @@ import "./App.css";
 import Home from "./components/Home/Home";
 import Nav from "./components/Nav/Nav";
 import {
-  BrowserRouter,
+  HashRouter as Router,
   Routes, // instead of "Switch"
   Route,
   useLocation,
@@ -16,9 +16,9 @@ import AnimatedRoute from "./AnimatedRoute";
 function App() {
   return (
     <div className="App" data-test="APP">
-      <BrowserRouter>
+      <Router>
         <AnimatedRoute />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
