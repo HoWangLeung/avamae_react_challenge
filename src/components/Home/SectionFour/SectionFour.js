@@ -4,7 +4,7 @@ import classes from "../Home.module.css";
 
 export default function SectionFour() {
   return (
-    <div className={classes.section4_container}>
+    <div className={classes.section4_container} data-testid="section4">
 
      <div  >
      <p className={classes.section4_title} >Sed libero justo, lobortis sit amet suscipit non</p>

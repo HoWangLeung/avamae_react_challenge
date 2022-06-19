@@ -3,7 +3,7 @@ import classes from "../Home.module.css";
 
 export default function SectionThree() {
   return (
-    <div className={classes.section3_container}>
+    <div className={classes.section3_container} data-testid="section3">
       <div className={classes.section3_text_container} >
         <span>Nulla sem urna, dictum sed nisi in ,viverra rutrum neque</span>
         <p>

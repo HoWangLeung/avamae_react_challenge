@@ -17,6 +17,7 @@ export default function SwiperSection({ bannerData }) {
 
   return (
     <Swiper
+    data-testid="swiperSection"
     onInit={(ev) => {
       set_my_swiper(ev)
   }}

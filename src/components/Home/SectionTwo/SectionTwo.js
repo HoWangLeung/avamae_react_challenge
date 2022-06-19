@@ -4,7 +4,7 @@ import classes from "../Home.module.css";
 
 export default function SectionTwo() {
   return (
-    <div className={classes.even_columns} >
+    <div className={classes.even_columns}  data-testid="section2">
     <div className={classes.section2_text_container} >
 
        <div  className={classes.section2_text_wrapper} >
