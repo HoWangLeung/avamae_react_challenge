@@ -8,7 +8,7 @@ export default function ErrorMessage({ errors }) {
     Message: "Message",
     "AddressDetails.AddressLine1":"Address 1",
     "AddressDetails.CityTown":"City/Town",
-    "AddressDetails.StateCountyn":"State/County",
+    "AddressDetails.StateCounty":"State/County",
     "AddressDetails.Country":"Country",
     "AddressDetails.Postcode":"PostCode",
     "SYSTEM_ERROR":"System Error"
