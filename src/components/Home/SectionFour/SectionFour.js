@@ -12,7 +12,7 @@ export default function SectionFour() {
 
       <div className={classes.section4_paragraphs_container}  >
         <div  className={classes.section4_paragraph_container}>
-          <p  >
+          <p className={classes.first_p} >
             Praesent sollicitudin ultrices velit. Maecenas mattis ipsum sed orci
             pulvinar, ut euismod mauris fringilla. Vestibulum non fermentum
             nunc. Aliquam vulputate, risus nec pulvinar varius, lectus tellus
