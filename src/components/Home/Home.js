@@ -10,6 +10,7 @@ import axios from "axios";
 import { MotionConfig } from "framer-motion";
 
 import {AnimationSettings} from '../Common/AnimationSettings'
+ 
 
 export default function Home(props) {
 
@@ -20,9 +21,11 @@ export default function Home(props) {
  
 
   useEffect(() => {
-    axios
-      .get(
-        "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details"
+    
+    
+    axios.get(
+        "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details", 
+  
       )
       .then((res) => {
         console.log(res.data);

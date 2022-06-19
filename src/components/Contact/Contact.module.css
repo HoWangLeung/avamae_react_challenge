@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   text-align: left;
+
 }
 
 .contact_inner_container {
@@ -11,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
 .contact_img_container {
 
@@ -31,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 
 }
 
@@ -168,6 +170,13 @@ label {
   justify-content: center;
   position: relative;
 }
+.form_submit_button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #525252;
+
+}
+
 
 .form_submit_button svg {
   height: 15px;

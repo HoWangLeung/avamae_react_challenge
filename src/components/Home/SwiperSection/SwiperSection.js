@@ -29,8 +29,8 @@ export default function SwiperSection({ bannerData }) {
     
       pagination={{ clickable: true }}
       // scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log("swiper")}
-      onSlideChange={() => console.log("slide change")}
+      onSwiper={(swiper) => {}}
+      onSlideChange={() => {}}
     >
        <div className="swiper-button-prev" onClick={()=>my_swiper.slidePrev()} ></div>
        <div className="swiper-button-next" onClick={()=>my_swiper.slideNext()}></div>

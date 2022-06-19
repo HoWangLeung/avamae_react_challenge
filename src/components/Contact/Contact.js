@@ -3,16 +3,18 @@ import React, { useState } from "react";
 import classes from "./Contact.module.css";
 import ErrorMessage from "./ErrorHandling/ErrorMessage";
 import { ReactComponent as IconSubmit } from "./Icon_Submit.svg";
-import { ReactComponent as IconValid } from "./Icon_Valid.svg";
+
 import { AnimationSettings } from "../Common/AnimationSettings";
 import { motion } from "framer-motion";
+import SuccessMessage from "./SuccessMessage";
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
   const [values, setValues] = useState({
     FullName: "",
     EmailAddress: "",
     PhoneNumbers: [""],
-    Message: "Hello",
+    Message: "",
     bIncludeAddressDetails: false,
     AddressDetails: {
       AddressLine1: "",
@@ -28,10 +30,8 @@ export default function Contact() {
   const [errors, setErrors] = useState([]);
 
   const handleChange = (e, index) => {
-    e.preventDefault();
     let name = e.target.name;
     let value = e.target.value;
- 
 
     if (name === "PhoneNumbers") {
       let newPhoneNumber = values.PhoneNumbers.filter((p, i) => i === index);
@@ -71,20 +71,23 @@ export default function Contact() {
   };
 
   const handleSubmit = () => {
+    setIsLoading(true);
     let payload = values;
 
     //remove empty element in array
     payload.PhoneNumbers = payload.PhoneNumbers.filter((n) => n);
-  
+
     axios
       .post(
         "https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit",
         values
       )
       .then((res) => {
-       
         if (res.status === 200 && res.data.Errors.length === 0) {
+          setErrors([])
           setSuccess(true);
+          setIsLoading(false);
+     
         }
       })
       .catch((err) => {
@@ -93,14 +96,15 @@ export default function Contact() {
           setErrors([
             { FieldName: "SYSTEM_ERROR", MessageCode: "SYSTEM_ERROR" },
           ]);
+
           return;
         }
 
         setErrors(err.response.data.Errors);
-      });
+        setIsLoading(false);
+      })
+      .finally(() => setIsLoading(false));
   };
-
- 
 
   return (
     <motion.div
@@ -151,7 +155,7 @@ export default function Contact() {
                     <div key={index} className={`${classes.form_group}`}>
                       <label htmlFor="phoneNumber1">
                         <span>{`Phone number 0${index + 1}`}</span>
-                        <span className={classes.optional}  > - optional</span>
+                        <span className={classes.optional}> - optional</span>
                       </label>
                       <input
                         name="PhoneNumbers"
@@ -171,7 +175,7 @@ export default function Contact() {
                   </button>
 
                   <div className={classes.form_group}>
-                    <div className={classes.form_group_message_text_wrapper} >
+                    <div className={classes.form_group_message_text_wrapper}>
                       <label htmlFor="message">Message</label>
                       <span>Maximum text length is 500 characters</span>
                     </div>
@@ -193,17 +197,13 @@ export default function Contact() {
                         bIncludeAddressDetails: !state.bIncludeAddressDetails,
                       }))
                     }
+                    data-testid="address_checkbox"
                   >
                     <input
                       type="checkbox"
                       name="bIncludeAddressDetails"
                       checked={values.bIncludeAddressDetails}
-                      onChange={() =>
-                        setValues((state) => ({
-                          ...state,
-                          bIncludeAddressDetails: !state.bIncludeAddressDetails,
-                        }))
-                      }
+                      onChange={() => {}}
                     />
                     <label htmlFor="vehicle1"> Add address details</label>
                   </div>
@@ -284,27 +284,22 @@ export default function Contact() {
                   )}
                 </form>
                 <button
+                  disabled={isLoading}
                   onClick={handleSubmit}
                   className={classes.form_submit_button}
+                  data-testid="submit_button"
                 >
                   <IconSubmit id="fixed" />
-                  <span>Submit</span>
+                  <span>{isLoading ? "Processing..." : "Submit"}</span>
                 </button>
               </div>
             )}
 
             {errors.length > 0 && <ErrorMessage errors={errors} />}
 
-            {success && (
-              <div className={classes.form_success_container}>
-                <div>
-                  <IconValid />
-                  <h3>Your message has been sent</h3>
-                  <p>We will be in contact with you in 24 hours.</p>
-                </div>
-              </div>
-            )}
+            <SuccessMessage success={success}/>
           </div>
+
         </div>
 
         <div className={classes.contact_img_container}>
