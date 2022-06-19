@@ -4,7 +4,7 @@ export const handlers = [
   rest.get(
     "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details",
     (req, res, ctx) => {
-        console.log("RES>",res);
+      
       return res(
         ctx.json({
             Details: [

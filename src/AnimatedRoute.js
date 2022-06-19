@@ -14,7 +14,7 @@ import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 export default function AnimatedRoute() {
   const location = useLocation();
-  console.log(location.pathname);
+ 
   return (
     <>
       <Nav />

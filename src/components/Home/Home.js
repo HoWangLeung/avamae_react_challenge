@@ -25,6 +25,7 @@ export default function Home(props) {
         "https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details"
       )
       .then((res) => {
+        console.log(res.data);
          let data = res.data.Details
   
         setBannerData(data);
@@ -37,7 +38,7 @@ export default function Home(props) {
     return () => {};
   }, []);
  
-console.log("bannerData===>",bannerData);
+ 
  
   return (
     <>

@@ -31,7 +31,7 @@ export default function Contact() {
     e.preventDefault();
     let name = e.target.name;
     let value = e.target.value;
-    console.log("index:", index, "name:", name, "value:", value);
+ 
 
     if (name === "PhoneNumbers") {
       let newPhoneNumber = values.PhoneNumbers.filter((p, i) => i === index);
@@ -75,14 +75,14 @@ export default function Contact() {
 
     //remove empty element in array
     payload.PhoneNumbers = payload.PhoneNumbers.filter((n) => n);
-    console.log(payload);
+  
     axios
       .post(
         "https://interview-assessment.api.avamae.co.uk/api/v1/contact-us/submit",
         values
       )
       .then((res) => {
-        console.log(res);
+       
         if (res.status === 200 && res.data.Errors.length === 0) {
           setSuccess(true);
         }
@@ -100,7 +100,7 @@ export default function Contact() {
       });
   };
 
-  console.log(errors);
+ 
 
   return (
     <motion.div
